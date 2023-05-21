@@ -46,7 +46,6 @@ public class CRUDProcess {
         } catch (Exception e) {
             System.out.println("Error al leer las personas. " + e.getMessage());
         }
-
     }
 
     public void update(ArrayList<Persona> personas) {
