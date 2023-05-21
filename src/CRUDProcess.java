@@ -169,8 +169,6 @@ public class CRUDProcess {
             for (Persona persona : personas) {
                 fw.write(" " + persona.getPersonaID() + "," + persona.getNombre() + " " + persona.getApellido() + "," + persona.getEdad() + "," + persona.getTelefono() + "\n");
             }
-
-
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Error al guardar. " + e.getMessage());
         } catch (FileNotFoundException e) {
