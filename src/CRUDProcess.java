@@ -115,8 +115,9 @@ public class CRUDProcess {
         try {
             fr = new FileReader(file);
             br = new BufferedReader(fr);
-            while (br.read() != -1) {
-                String personaRegistrada = br.readLine();
+            String personaRegistrada = br.readLine();
+            while (personaRegistrada != null) {
+
 
                 //System.out.println(personaRegistrada);
 
@@ -137,6 +138,7 @@ public class CRUDProcess {
                     }
                 }
                 personas.add(new Persona(nombres[0], nombres[1], numeroTel, edad));
+                personaRegistrada = br.readLine();
             }
 
 
@@ -166,7 +168,7 @@ public class CRUDProcess {
         try {
             fw = new FileWriter(file);
             for (Persona persona : personas) {
-                fw.write(" " + persona.getPersonaID() + "," + persona.getNombre() + " " + persona.getApellido() + "," + persona.getEdad() + "," + persona.getTelefono() + "\n");
+                fw.write(persona.getPersonaID() + "," + persona.getNombre() + " " + persona.getApellido() + "," + persona.getEdad() + "," + persona.getTelefono() + "\n");
             }
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Error al guardar. " + e.getMessage());
